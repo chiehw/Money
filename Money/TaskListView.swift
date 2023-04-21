@@ -46,11 +46,7 @@ struct TaskListView: View {
                             Image(systemName: "").foregroundColor(.red)
                         }
                     }
-                    Button(action: { self.toggleDone(of: task) }) {
-                        Text(task.title)
-                    }
-                    Spacer()
-                    if task.isDone {
+                    if !task.isDone {
                         NavigationLink(
                             destination: TaskEditView(
                                 task: task
@@ -68,9 +64,7 @@ struct TaskListView: View {
                             Text(task.title).tag(task.title)
                         }
                         Spacer()
-                        if task.isDone {
-                            Image(systemName: "checkmark").foregroundColor(.green)
-                        }
+                        Image(systemName: "checkmark").foregroundColor(.green)
                     }
                 }
             }

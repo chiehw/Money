@@ -11,8 +11,8 @@ import SwiftUI
 struct MoneyApp: App {
     var body: some Scene {
         WindowGroup {
-//            TaskListView().environmentObject(UserData())
-            ContentView()
+            TaskListView().environmentObject(UserData())
+//            ContentView()
         }
     }
 }
