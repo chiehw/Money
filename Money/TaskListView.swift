@@ -34,11 +34,7 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             List {
-                if !self.isEditing {   // Input Field
-                    HStack {
-                        TextField("Create a new Task...", text: $draftTitle, onCommit: self.createTask)    // Title, Text, OnCommit
-                    }
-                }
+                TextField("Create a new Task...", text: $draftTitle, onCommit: self.createTask)    // Title, Text, OnCommit
                 
                 ForEach(self.userData.tasks) { task in
                     TaskItemView(task: task, isEditing: self.$isEditing)
@@ -49,7 +45,7 @@ struct TaskListView: View {
                 if !self.isEditing {
                     Text("Edit")
                 } else {
-                    Text("Done")
+                    Text("Done").bold()
                 }
             })
         }
