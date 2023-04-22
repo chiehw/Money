@@ -41,33 +41,7 @@ struct TaskListView: View {
                 }
                 
                 ForEach(self.userData.tasks) { task in
-                    HStack { // Delete Button + Title + Finish?
-                        if self.isEditing {
-                            Button(action: { self.delete(task: task) }) {
-                                Image(systemName: "").foregroundColor(.red)
-                            }
-                        }
-                        if !task.isDone {
-                            NavigationLink(
-                                destination: TaskEditView(
-                                    task: task
-                                )
-                                .environmentObject(
-                                    self.userData
-                                )
-                            ){
-                                Text(task.title).tag(task.title)
-                            }
-                        } else {
-                            Button(
-                                action: { self.toggleDone(of: task) }
-                            ) {
-                                Text(task.title).tag(task.title)
-                            }
-                            Spacer()
-                            Image(systemName: "checkmark").foregroundColor(.green)
-                        }
-                    }
+                    TaskItemView(task: task, isEditing: self.$isEditing)
                 }
             }
             .navigationBarTitle("Tasks")
