@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04080FF129F37C6600A6CD1F /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04080FF029F37C6600A6CD1F /* TaskItemView.swift */; };
+		04080FF329F387DA00A6CD1F /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04080FF229F387DA00A6CD1F /* UserDefaultValue.swift */; };
 		04C2D0E029F1A138008071A2 /* MoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2D0DF29F1A138008071A2 /* MoneyApp.swift */; };
 		04C2D0E229F1A138008071A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2D0E129F1A138008071A2 /* ContentView.swift */; };
 		04C2D0E429F1A139008071A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C2D0E329F1A139008071A2 /* Assets.xcassets */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04080FEF29F3788800A6CD1F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		04080FF029F37C6600A6CD1F /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
+		04080FF229F387DA00A6CD1F /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
 		04C2D0DC29F1A138008071A2 /* Money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Money.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C2D0DF29F1A138008071A2 /* MoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyApp.swift; sourceTree = "<group>"; };
 		04C2D0E129F1A138008071A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		04C2D0D329F1A138008071A2 = {
 			isa = PBXGroup;
 			children = (
+				04080FEF29F3788800A6CD1F /* README.md */,
 				04C2D0DE29F1A138008071A2 /* Money */,
 				04C2D0EF29F1A13A008071A2 /* MoneyTests */,
 				04C2D0F929F1A13A008071A2 /* MoneyUITests */,
@@ -106,10 +112,12 @@
 				04C2D0E129F1A138008071A2 /* ContentView.swift */,
 				04C2D0E329F1A139008071A2 /* Assets.xcassets */,
 				04C2D0E529F1A139008071A2 /* Preview Content */,
+				04C2D10F29F1AA14008071A2 /* UserData.swift */,
 				04C2D10929F1A908008071A2 /* Task.swift */,
 				04C2D10D29F1A9BD008071A2 /* TaskListView.swift */,
-				04C2D10F29F1AA14008071A2 /* UserData.swift */,
 				04D61AC129F235D000975A99 /* TaskEditView.swift */,
+				04080FF029F37C6600A6CD1F /* TaskItemView.swift */,
+				04080FF229F387DA00A6CD1F /* UserDefaultValue.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -271,7 +279,9 @@
 			files = (
 				04C2D0E229F1A138008071A2 /* ContentView.swift in Sources */,
 				04C2D10A29F1A908008071A2 /* Task.swift in Sources */,
+				04080FF329F387DA00A6CD1F /* UserDefaultValue.swift in Sources */,
 				04C2D0E029F1A138008071A2 /* MoneyApp.swift in Sources */,
+				04080FF129F37C6600A6CD1F /* TaskItemView.swift in Sources */,
 				04D61AC229F235D000975A99 /* TaskEditView.swift in Sources */,
 				04C2D11029F1AA14008071A2 /* UserData.swift in Sources */,
 				04C2D10E29F1A9BD008071A2 /* TaskListView.swift in Sources */,
