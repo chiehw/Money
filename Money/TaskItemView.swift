@@ -42,11 +42,11 @@ struct TaskItemView: View {
                         self.userData
                     )
                 ){
-                    Text(task.title).tag(task.title)
+                    Text(task.title)
                 }
             } else {
                 Button(action: { self.toggleDone() } ) {
-                    Text(self.task.title).tag(task.title)
+                    Text(self.task.title)
                 }
                 Spacer()
                 if task.isDone {
