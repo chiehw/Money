@@ -15,6 +15,7 @@ struct TaskItemView: View {
     
     private func delete() {
         self.userData.tasks.removeAll(where: { $0.id == self.task.id })
+        self.userData.objectWillChange.send()
         if self.userData.tasks.isEmpty {
             self.isEditing = false
         }
@@ -24,6 +25,7 @@ struct TaskItemView: View {
         guard !self.isEditing else { return }
         guard let index = self.userData.tasks.firstIndex(where: {$0.id == self.task.id }) else { return }
         self.userData.tasks[index].isDone.toggle()
+        self.userData.objectWillChange.send()
     }
     
     var body: some View {
