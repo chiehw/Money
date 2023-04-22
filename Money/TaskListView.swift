@@ -32,51 +32,53 @@ struct TaskListView: View {
     }
     
     var body: some View {
-        List {
-            if !self.isEditing {   // Input Field
-                HStack {
-                    TextField("Create a new Task...", text: $draftTitle, onCommit: self.createTask)    // Title, Text, OnCommit
-                }
-            }
-            
-            ForEach(self.userData.tasks) { task in
-                HStack { // Delete Button + Title + Finish?
-                    if self.isEditing {
-                        Button(action: { self.delete(task: task) }) {
-                            Image(systemName: "").foregroundColor(.red)
-                        }
-                    }
-                    if !task.isDone {
-                        NavigationLink(
-                            destination: TaskEditView(
-                                task: task
-                            )
-                            .environmentObject(
-                                self.userData
-                            )
-                        ){
-                            Text(task.title).tag(task.title)
-                        }
-                    } else {
-                        Button(
-                            action: { self.toggleDone(of: task) }
-                        ) {
-                            Text(task.title).tag(task.title)
-                        }
-                        Spacer()
-                        Image(systemName: "checkmark").foregroundColor(.green)
+        NavigationView {
+            List {
+                if !self.isEditing {   // Input Field
+                    HStack {
+                        TextField("Create a new Task...", text: $draftTitle, onCommit: self.createTask)    // Title, Text, OnCommit
                     }
                 }
+                
+                ForEach(self.userData.tasks) { task in
+                    HStack { // Delete Button + Title + Finish?
+                        if self.isEditing {
+                            Button(action: { self.delete(task: task) }) {
+                                Image(systemName: "").foregroundColor(.red)
+                            }
+                        }
+                        if !task.isDone {
+                            NavigationLink(
+                                destination: TaskEditView(
+                                    task: task
+                                )
+                                .environmentObject(
+                                    self.userData
+                                )
+                            ){
+                                Text(task.title).tag(task.title)
+                            }
+                        } else {
+                            Button(
+                                action: { self.toggleDone(of: task) }
+                            ) {
+                                Text(task.title).tag(task.title)
+                            }
+                            Spacer()
+                            Image(systemName: "checkmark").foregroundColor(.green)
+                        }
+                    }
+                }
             }
+            .navigationBarTitle("Tasks")
+            .navigationBarItems(trailing: Button(action: { self.isEditing.toggle() }) {
+                if !self.isEditing {
+                    Text("Edit")
+                } else {
+                    Text("Done")
+                }
+            })
         }
-        .navigationBarTitle("Tasks")
-        .navigationBarItems(trailing: Button(action: { self.isEditing.toggle() }) {
-            if !self.isEditing {
-                Text("Edit")
-            } else {
-                Text("Done")
-            }
-        })
     }
 }
 
