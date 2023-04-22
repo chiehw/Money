@@ -14,10 +14,12 @@ private let defaultTasks: [Task] = [
 ]
 
 final class UserData: ObservableObject {
-    let didChange = PassthroughSubject<UserData, Never>();
-    var tasks: [Task] = defaultTasks {
+    let didChange = PassthroughSubject<UserData, Never>()
+    
+    @UserDefaultValue(key: "Tasks", defaultValue: defaultTasks)
+    var tasks: [Task] {
         didSet {
-            self.didChange.send(self);
+            didChange.send(self);
         }
     }
 }
